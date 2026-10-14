@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vidya – My Courses</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside class="side" id="side">
+  <div class="brand"><img src="vidya.png" alt="Vidya – Progress Through Education"></div>
+  <ul class="nav" id="nav">
+    <li><a href="#" class="active" data-t="Dashboard"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Dashboard</a></li>
+    <li><a href="#" data-t="All Courses"><svg class="ico" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>All Courses</a></li>
+    <li><a href="#" data-t="Messages"><svg class="ico" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/></svg>Messages</a></li>
+    <li><a href="#" data-t="Friends"><svg class="ico" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14a6 6 0 0 1 3 6"/></svg>Friends</a></li>
+    <li><a href="#" data-t="Schedule"><svg class="ico" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg>Schedule</a></li>
+    <li><a href="#" data-t="To-do"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg>To-do</a></li>
+  </ul>
+  <ul class="nav settings"><li><a href="#" data-t="Settings"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Settings</a></li></ul>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<main class="main">
+  <div class="top">
+    <button class="menu-btn" id="menu" aria-label="Open menu"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <h1 id="title">My Courses</h1>
+    <div class="search" id="search">
+      <input id="q" type="search" placeholder="Search courses…" aria-label="Search courses">
+      <button class="icon-btn" id="sbtn" aria-label="Search"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    </div>
+    <button class="icon-btn" id="bell" aria-label="Notifications"><svg class="ico" viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 6 2 7.5 2 7.5H4S6 15 6 9zM10 20a2 2 0 0 0 4 0"/></svg><span class="dot" id="dot"></span></button>
+  </div>
+
+  <!-- Courses view (Dashboard / All Courses) -->
+  <div id="view-courses">
+    <div class="filters">
+      <span>Filter by:</span>
+      <label class="sel"><select data-f="time" aria-label="Time"><option value="">Time</option><option value="morning">Morning</option><option value="afternoon">Afternoon</option></select></label>
+      <label class="sel"><select data-f="level" aria-label="Level"><option value="">Level</option><option value="beginner">Beginner</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option></select></label>
+      <label class="sel"><select data-f="lang" aria-label="Language"><option value="">Language</option><option value="en">English</option><option value="ml">Malayalam</option></select></label>
+      <label class="sel"><select data-f="type" aria-label="Type"><option value="">Type</option><option value="theory">Theory</option><option value="practical">Practical</option></select></label>
+    </div>
+
+    <section class="grid" id="grid">
+    <article class="card lav" data-time="morning" data-level="advanced" data-lang="en" data-type="theory"><i class="blob b1"></i><i class="blob b2"></i><svg class="illus" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.5" r="2"/><circle cx="4.5" cy="11" r="2"/><circle cx="19.5" cy="11" r="2"/><circle cx="8" cy="19.5" r="2"/><circle cx="16" cy="19.5" r="2"/><circle cx="12" cy="12" r="1.6"/><path d="M12 6.5v3.9M6.4 11.2l4 .6M17.6 11.2l-4 .6M11 13.3l-2 4.3M13 13.3l2 4.3"/></svg><h3>Artificial Intelligence</h3><p>CSE B 2022 BATCH</p><span class="by">Created by <b>Mr. Felix</b></span><button class="go" aria-label="Open Artificial Intelligence"><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></article>
+    <article class="card peach" data-time="afternoon" data-level="intermediate" data-lang="en" data-type="theory"><i class="blob b3"></i><i class="blob b4"></i><svg class="illus" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M8 20.5h8M12 16.5v4M7 8.5l2.5 2-2.5 2M12 12.5h4.5"/></svg><h3>Operating Systems</h3><p>CSE B 2022 BATCH</p><span class="by">Created by <b>Ms. Nancy</b></span><button class="go" aria-label="Open Operating Systems"><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></article>
+    <article class="card pink" data-time="morning" data-level="beginner" data-lang="ml" data-type="practical"><i class="blob b5"></i><i class="blob b6"></i><svg class="illus" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M10 12.5L7.5 15l2.5 2.5M14 12.5l2.5 2.5-2.5 2.5"/><circle cx="5.7" cy="6.5" r=".5"/><circle cx="8" cy="6.5" r=".5"/></svg><h3>Web Programming</h3><p>CSE B 2022 BATCH</p><span class="by">Created by <b>Ms. Williams</b></span><button class="go" aria-label="Open Web Programming"><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></article>
+    <article class="card lav" data-time="afternoon" data-level="advanced" data-lang="en" data-type="practical"><i class="blob b7"></i><i class="blob b8"></i><svg class="illus" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/><path d="M12.5 16.2v-5M10.2 13l2.3-2.3 2.3 2.3"/></svg><h3>Cloud Computing</h3><p>CSE B 2022 BATCH</p><span class="by">Created by <b>Mr. Alex</b></span><button class="go" aria-label="Open Cloud Computing"><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></article>
+    <article class="card green" data-time="morning" data-level="intermediate" data-lang="ml" data-type="theory"><i class="blob b10"></i><i class="blob b9"></i><svg class="illus" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1.2"/><rect x="15" y="3" width="6" height="6" rx="1.2"/><rect x="9" y="15" width="6" height="6" rx="1.2"/><path d="M9 6h6M6 9v3h12V9M12 12v3"/></svg><h3>Software Engineering</h3><p>CSE B 2022 BATCH</p><span class="by">Created by <b>Ms. Susan</b></span><button class="go" aria-label="Open Software Engineering"><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></article>
+    <article class="card green" data-time="afternoon" data-level="beginner" data-lang="en" data-type="practical"><i class="blob b11"></i><i class="blob b12"></i><svg class="illus" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg><h3>Graphic Designing</h3><p>CSE B 2022 BATCH</p><span class="by">Created by <b>Ms. Betsy</b></span><button class="go" aria-label="Open Graphic Designing"><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></article>
+      <p class="empty" id="empty" hidden>No courses match. Clear a filter or change your search.</p>
+    </section>
+  </div>
+
+  <!-- Default page for every section that isn't built yet -->
+  <section class="notfound" id="view-404" hidden>
+    <div class="code" aria-hidden="true">404</div>
+    <h2>Page Not Found</h2>
+    <p>The <b id="nf-name">page</b> section doesn't exist yet. It may have been moved or is still being built.</p>
+    <button class="back" id="nf-back">Back to Dashboard</button>
+  </section>
+</main>
+
+<aside class="right">
+  <div class="user"><div><b>Lena Williams</b><small>ID: 1094881999</small></div><span class="av" style="background:#c9826b" aria-label="Lena Williams"><img src="images/avatars/lena.svg" alt="" onerror="this.remove()">LW</span></div>
+  <section class="cal" aria-label="Calendar">
+    <div class="cal-h"><h2 id="mon"></h2><div><button id="prev" aria-label="Previous month"><svg class="ico" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><button id="next" aria-label="Next month"><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></div></div>
+    <div class="days" id="days"></div>
+  </section>
+  <section>
+    <div class="on-h"><h2>Online Users</h2><button id="all">See all</button></div>
+    <ul class="ou" id="ou"></ul>
+  </section>
+</aside>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
